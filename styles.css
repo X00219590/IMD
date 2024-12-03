@@ -4,6 +4,10 @@ body {
   background-color: #c0c0c0;
 }
 
+.splash {
+  margin: 2rem;
+}
+
 .test-class {
   color: green;
 }
