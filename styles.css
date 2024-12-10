@@ -4,15 +4,22 @@ body {
   background-color: #c0c0c0;
 }
 
-.splash {
-  margin: 2rem;
+.img-profile {
+	margin: 5%;
+	margin-right: 10%;
 }
 
-.test-class {
-  color: green;
+.thing1 {
+	display: flex;
+	align-items: center;
+	background-image: url("images/background.png");
+	height: 100%;
+	padding: 1%;
+	padding-top: 15%;
+}
+.accordion {
+	background-color: #c0c0c0;
+	margin: 2%;
+	width: 35%;
 }
 
-.test-class:hover {
-  color: yellow;
-  align-items: baseline;
-}
