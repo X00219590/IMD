@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<div class="thing1">
-			<img class="img-profile" src="images/thing.png" width="25%" height="25%" alt="Profile image of X00219590 (Miku as stand-in)"/>
+			<img class="img-profile" src="images/miku-standin.jpg" width="25%" height="25%" alt="Profile image of X00219590 (Miku as stand-in)"/>
 			
 			<div class="accordion accordion" id="accordionFlushExample">
 				<div class="accordion-item">
@@ -22,7 +22,7 @@
 					</h2>
 					<div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
 						<div class="accordion-body">
-							<p>Name: Alexander (Alex) Finn</p>
+							<p>Name: <?php echo "name" ?> Alexander (Alex) Finn</p>
 							<p>DoT: 03/05/2001</p>
 							<p>Highest Degree: Lvl 7 somthing</p>
 						</div>
@@ -52,12 +52,14 @@
 							<p>TuDublin E-Mail: X00219590@myTuDublin.ie</p>
 							<p>Personal E-Mail: personal.Mine@gmail.command</p>
 							<p>Number: 000 000 0000</p>
+							<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+								Get in Contact
+							</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-    <br><br>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">
@@ -87,10 +89,18 @@
 			</div>
 		</div>
     </nav>
-	
-	<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-		Get in Contact
-	</button>
+	<div>
+		<div class="card" style="width: 18rem;">
+			<img src="images/thing.png" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">Card title</h5>
+				<p class="card-text">
+					Some quick example text to build on the card title and make up the bulk of the card's content.
+				</p>
+				<a href="thing.php" class="btn btn-primary">Go somewhere</a>
+			</div>
+		</div>
+	</div>
 	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
 		<div class="offcanvas-header">
 			<h5 class="offcanvas-title" id="offcanvasRightLabel">
@@ -105,25 +115,27 @@
 				</label>
 				<input name= "email" type="email" class="form-control" id="emailAddress" placeholder="name@example.com">
 			</div>
-			<?php
-				if ($_SERVER["REQUEST_METHOD"] == "submit") {
-					$email = test_input($_POST["emailAddress"]);
-					echo $email;
-				}
-			?>
 			<div class="mb-3">
 				<label for="emailContents" class="form-label">
 					Message
 				</label>
 				<textarea class="form-control" id="emailContents" rows="3"></textarea>
 			</div>
+			<?php
+				if(isset($_POST['post'])) {
+					$myfile = fopen("post.txt", "w") or die("Unable to open file!");
+					$txt = "John Doe\n";
+					fwrite($myfile, $txt);
+					$txt = "Jane Doe\n";
+					fwrite($myfile, $txt);
+					fclose($myfile);
+				}
+			?> 
 			<div class="col-auto">
-				<button type="submit" class="btn btn-primary mb-3">
+				<button type="submit" class="btn btn-primary mb-3" name ="post" value="post">
 					Post
 				</button>
-				<?php echo "<p>$email;</p>"; ?>
 			</div>
-
 		</div>
 	</div>
 	

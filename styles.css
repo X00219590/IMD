@@ -15,7 +15,7 @@ body {
 	background-image: url("images/background.png");
 	height: 100%;
 	padding: 1%;
-	padding-top: 15%;
+	padding-top: 10%;
 }
 .accordion {
 	background-color: #c0c0c0;
@@ -23,3 +23,12 @@ body {
 	width: 35%;
 }
 
+.gitincontact {
+	border-style: solid;
+	border-color: green;
+}
+
+.card {
+	margin: 2%
+	
+}
